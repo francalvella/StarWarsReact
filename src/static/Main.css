@@ -1,0 +1,145 @@
+:root{
+    background-color: black;
+    font-family: 'Star Jedi', arial;
+    color: yellow
+  }
+
+*{
+  box-sizing: border-box;
+}
+
+.App{
+  min-width: 830px;
+}
+
+.nav{
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.nav-list{
+    width:500px;
+    list-style: none;
+    display: flex;
+    margin: 8px auto;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 6px;
+    outline: yellow solid;
+}
+
+.nav-list-item, .link{
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 700;
+    color: yellow
+}
+
+.nav-list-item:hover .link{
+  color: rgb(248, 240, 130);
+  transition: .4s;
+  font-size: 18px; 
+  letter-spacing: 2px;
+}
+
+.user-nav{
+  list-style: none;
+  position: absolute;
+  right: 3%;
+  display:flex;
+}
+
+.user-nav-item{
+  text-decoration: none;
+  padding: 6px;
+}
+
+.user-nav-item:hover .link{
+  color: rgb(248, 240, 130);
+}
+
+.read-item-container{
+  display:flex;
+  justify-content: space-around;
+
+}
+
+.read{
+  max-width: 400px;
+}
+
+.read-nav{
+  width: 100px;
+  height: 50px;
+  outline: solid yellow;
+  border-radius: 6px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.link-read{
+  align-self: center;
+  text-decoration: none;
+  color: yellow
+}
+
+
+.form-item{
+  padding: 5px;
+  width: 600px;
+}
+
+.form-container{
+  display: flex;
+  justify-content: center;
+}
+
+.input, .label{
+  padding: 0 5px;
+}
+
+.input{
+  border: none;
+  border-bottom: 1px solid yellow;
+  background-color: transparent;
+  width: 100px;
+  color: yellow;
+}
+
+.input:hover,.input:focus{
+  outline: none;
+  width: 200px;
+  box-shadow: 0 1px yellow;
+  transition: 0.4s
+}
+
+.label{
+  letter-spacing: 2px;
+}
+
+.form-title{
+  letter-spacing: 2px;
+}
+
+.btn{
+  background: yellow;
+  color: #000;
+  height: 50px;
+  margin: 5px;
+  width: 150px;
+  font: bold 15px;
+  cursor: pointer;
+  font-weight: 600;
+  text-shadow: none;
+  letter-spacing: 2px;
+}
+
+.btn:hover{
+  outline: solid 1px #fff;
+}
+
