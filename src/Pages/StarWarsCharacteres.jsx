@@ -32,7 +32,7 @@ function Characters(){
         return(
             <div>
                 <h1>Personajes</h1>
-                {people.map(person=><Person name={person.name} gender={person.gender} eye_color={person.eye_color} species={person.species} homeworld={person.homeworld} url={person.url}/>)}
+                {people.map(person=><Person key={person.name} name={person.name} gender={person.gender} eye_color={person.eye_color} species={person.species} homeworld={person.homeworld} url={person.url}/>)}
             </div>
         )
     }

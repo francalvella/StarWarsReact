@@ -9,7 +9,7 @@ function ReadPlanet(){
     const {id} = useParams()
     const [planet, setPlanet] = useState({})
     const [loading, setLoading] = useState(true);
-    const [residents, setResidents] = useState([])
+    const [residents, setResidents] = useState(["Sin residentes"])
 
 
     useEffect(()=>{
@@ -52,6 +52,7 @@ function ReadPlanet(){
                     <p><b>Periodo Orbital: {planet.orbital_period} días</b></p>
                     <p><b>Periodo de Rotación: {planet.rotation_period} HS</b></p>    
                     <p><b>Residentes: {residents.join(", ")} </b></p>    
+                    {/* Solo puedo ver los residentes cuando cambio de componente. */}
                 </div>
                 <Link className="link-read" to={"/planet/" + (parseInt(id)+1)}>
                     <div className='read-nav'>Siguiente</div>

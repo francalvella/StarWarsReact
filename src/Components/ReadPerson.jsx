@@ -9,7 +9,7 @@ function ReadPerson(){
     const {id} = useParams()
     const [person, setPerson] = useState({})
     const [loading, setLoading] = useState(true);
-    const [ships, SetShips] = useState(["Cargando..."])
+    const [ships, SetShips] = useState(["Sin naves"])
 
 
     useEffect(()=>{
@@ -20,8 +20,7 @@ function ReadPerson(){
             .then(res=>{
                 SetShips(res);
                 setLoading(false);
-                
-                console.log(res)})
+            })
     
         })
     }, [id])    
@@ -54,7 +53,7 @@ function ReadPerson(){
                     <p><b>Nacimiento: {person.birth_year}</b></p>
                     <p><b>Color de piel: {person.skin_color}</b></p>
                     <p><b>Naves: {ships.join(", ")}</b></p>
-                    {/* Se me muestra el state Ships cuando cambio de personaje */}
+                    {/* Se me muestra el state Ships solo cuando cambio de personaje */}
 
                    
                 </div>

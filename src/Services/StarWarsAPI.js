@@ -1,41 +1,34 @@
-export function StarWarsAPI(){
-    return fetch("https://swapi.dev/api/people")
-            .then(response=>response.json())
+export async function StarWarsAPI(){
+    const response = await fetch("https://swapi.dev/api/people")
+    return await response.json()
 }
 
-export function StarWarsPlanets(){
-    return fetch("https://swapi.dev/api/planets")
-            .then(response=>response.json())
+export async function StarWarsPlanets(){
+    const response = await fetch("https://swapi.dev/api/planets")
+    return await response.json()
 }
 
-export function getPlanetById(id){
-    return fetch("https://swapi.dev/api/planets/" + id)
-            .then(response=>response.json())
+export async function getPlanetById(id){
+    const response = await fetch("https://swapi.dev/api/planets/" + id)
+    return await response.json()
 }
 
-export function getPersonById(id){
-    return fetch("https://swapi.dev/api/people/" + id)
-            .then(response=>response.json())
+export async function getPersonById(id){
+    const response = await fetch("https://swapi.dev/api/people/" + id)
+    return await response.json()
 }
 
-
-// Quise haacer una función que pueda reutilizar para solicitar información a la API cuando me dan arrays de URLs.
-// Por más que me devuelve el array como quiero, no logro que se me asigne en los states
-export function getFetchedName(...args){
-    return new Promise((resolve,reject)=>{
-        let array = []
-        for(let i=0;i<args.length;i++){
-            if(Array.isArray(args[i])){
-                args[i].map(person=>{
-                    fetch(person).then(response=>response.json())
-                    .then(response=>array.push(response.name))
-                })
-            }else{
-                fetch(args[i]).then(response=>response.json())
-                .then(response=>array.push(response.name))
-            }
-        };
-        resolve(array)
-        
-    })
+export async function getFetchedName(...args){ 
+    if(Array.isArray(args[0])){
+        const array = await Promise.all(
+            args[0].map(async person=>{
+                return await fetch(person).then(response=>response.json())
+            })           
+        )
+        return array.map(item=>item.name)
+    }else{
+        const res = await fetch(args[0])
+        const resJSON = await res.json()
+        return resJSON.name   
+    }
 }

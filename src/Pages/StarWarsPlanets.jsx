@@ -33,7 +33,7 @@ function Planets(){
         return (
             <div>
                 <h1>Planetas</h1>
-                {planets.map(planet=><Planet name={planet.name} climate={planet.climate} terrain={planet.terrain} gravity={planet.gravity} residentURL={planet.residents} url={planet.url}/>)}
+                {planets.map(planet=><Planet key={planet.name} name={planet.name} climate={planet.climate} terrain={planet.terrain} gravity={planet.gravity} residentURL={planet.residents} url={planet.url}/>)}
             </div>
         )
     }
