@@ -51,7 +51,7 @@ function ReadPlanet(){
                     <p><b>Diámetro: {planet.diameter}</b></p>
                     <p><b>Periodo Orbital: {planet.orbital_period} días</b></p>
                     <p><b>Periodo de Rotación: {planet.rotation_period} HS</b></p>    
-                    <p><b>Residentes: {residents.join(", ")} </b></p>    
+                    <p><b>Residentes: {residents.join(", ")||"Sin residentes"} </b></p>    
                     {/* Solo puedo ver los residentes cuando cambio de componente. */}
                 </div>
                 <Link className="link-read" to={"/planet/" + (parseInt(id)+1)}>

@@ -52,7 +52,7 @@ function ReadPerson(){
                     <p><b>Color de ojos: {person.eye_color}</b></p>
                     <p><b>Nacimiento: {person.birth_year}</b></p>
                     <p><b>Color de piel: {person.skin_color}</b></p>
-                    <p><b>Naves: {ships.join(", ")}</b></p>
+                    <p><b>Naves: {ships.join(", ")||"Sin naves"}</b></p>
                     {/* Se me muestra el state Ships solo cuando cambio de personaje */}
 
                    

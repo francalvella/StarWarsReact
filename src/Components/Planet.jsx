@@ -45,7 +45,7 @@ function Planet(props){
                     <p><b style={styles.b}>Clima: {climate}</b></p>
                     <p><b style={styles.b}>Ecosistema: {terrain}</b></p>
                     <p><b style={styles.b}>Gravedad: {gravity}</b></p>
-                    <p><b style={styles.b}>Residentes: {residents.join(", ")}</b></p>
+                    <p><b style={styles.b}>Residentes: {residents.join(", ")||"Sin residentes"}</b></p>
                     {/* Se que se asigna correctamente pero creo que se vuelve a asignar en un array vacio. O por alguna razón no se asigna  */}
                 </div>
             </Link>

@@ -18,17 +18,29 @@ export async function getPersonById(id){
     return await response.json()
 }
 
-export async function getFetchedName(...args){ 
-    if(Array.isArray(args[0])){
+export async function getFetchedName(url){ 
+    if(Array.isArray(url)){
         const array = await Promise.all(
-            args[0].map(async person=>{
+            url.map(async person=>{
                 return await fetch(person).then(response=>response.json())
             })           
         )
         return array.map(item=>item.name)
     }else{
-        const res = await fetch(args[0])
+        const res = await fetch(url)
         const resJSON = await res.json()
         return resJSON.name   
     }
+}
+
+export async function searchPeople(input){
+    const response = await fetch("https://swapi.dev/api/people/?search="+ input)
+    const responseJSON = await response.json()
+    return responseJSON.results
+} 
+
+export async function searchPlanets(input){
+    const response = await fetch("https://swapi.dev/api/planets/?search="+ input)
+    const responseJSON = await response.json()
+    return responseJSON.results
 }

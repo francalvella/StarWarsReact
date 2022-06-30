@@ -1,1 +1,1 @@
-Star Wars Web fetching data from the StarWarsAPI
+Star Wars Web fetching data from the StarWarsAPI. I used CSS and JavaScript with React

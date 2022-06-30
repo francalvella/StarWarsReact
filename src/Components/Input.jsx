@@ -1,7 +1,7 @@
 
 
 function Input(props){
-    const {label, type, name, placeholder, register} = props
+    const {label, type, name, placeholder, register, className} = props
 
     return(
         <div>
@@ -11,7 +11,7 @@ function Input(props){
                         <label className="label" htmlFor="">{label}</label>
                     </td>
                     <td>
-                        <input className="input" name={name} type={type||"text"} placeholder={placeholder||""} {...register}/>
+                        <input className={className||"input"} name={name} type={type||"text"} placeholder={placeholder||""} {...register}/>
                     </td>
                 </tr>
             </table>
