@@ -87,15 +87,21 @@ ul{
     .search-results-list{
       background-color: #3f3f3f;
       position: absolute;
-      top: 21px;
+      bottom: -1;
       visibility: hidden;
       width: 300px;
+      padding: 0;
+      margin: 0;
     }
 
     .search-results{
       color: #fff;
       text-align: left;
       padding: 5px;
+    }
+
+    .search-results:hover{
+      background-color: #242323;
     }
 
 .read-item-container{
